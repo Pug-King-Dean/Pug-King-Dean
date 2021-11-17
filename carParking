@@ -1,0 +1,129 @@
+package refForAssignment;
+
+import java.util.Scanner;
+
+public class carParking {
+	
+	public static void main(String[] args) {
+		Scanner key = new Scanner(System.in);
+		String Car1 = "INZ 2754", Car2 = "VUl 1945", Car3 = "HDZ 3718";
+		double hours1 = 0.0, hours2 = 0.0, hours3 = 0.0;
+		double charge1 = 0.0,charge2 = 0.0;
+		System.out.print("\n\tEnter Hours spent: ");
+		hours1 = key.nextDouble();
+calculateCharge(hours1, charge1);
+		
+			System.out.print("\n\tEnter Hours spent:");
+		hours2 = key.nextDouble();
+		
+		calculateCharge(hours2, charge2);
+		
+		System.out.print("\n\tEnter Hours spent:");
+		hours3 = key.nextDouble();
+		double charge3 = 0.0;
+		calculateCharge3(charge3, hours3);
+		
+		
+		System.out.printf("\n\n\t %-13s %12s %12s", "Cars", "Hours", "Charge");
+		
+		System.out.printf("\n\n\t %-13s %12s %5s %5s", Car1, hours1,"£", calculateCharge(charge1, hours1));
+		
+		System.out.printf("\n\n\t %-13s %12s %5s %5s", Car2, hours2, "£", calculateCharge2(charge2, hours2));
+		
+		System.out.printf("\n\n\t %-13s %12s %5s %5s", Car3, hours3, "£", calculateCharge3(charge3, hours3));
+		
+		double totalHours = hours1 + hours2 + hours3;
+		double totalCharge = calculateCharge(charge1,hours1) + calculateCharge2(charge2,hours2) + calculateCharge3(charge3,hours3);
+		System.out.printf("\n\n\t %-13s %12s %5s %5s", "TOTAL", totalHours, "£", totalCharge);
+		
+
+	}
+
+	public static double calculateCharge(double charge1, double hours1) {
+		Scanner key = new Scanner(System.in);
+		
+	
+	
+		if (hours1 >= 0 && hours1 <= 3)
+		{
+			charge1 = 2;
+			
+			return charge1;
+		}
+		else if ( hours1 >=3.01 && hours1 <= 23.99)
+		{
+			double hoursPay = hours1 - 3;
+			charge1 = hoursPay * 0.5 + 2.0;
+			return charge1;
+		}
+		else if (hours1 == 24)
+			
+		{ charge1 = 10.0;
+		return charge1;
+		}
+		if (hours1 >= 24.01)
+		{ System.out.print("\tError");
+		return 0;
+		}
+		return charge1;
+	
+		
+		
+	}
+	public static double calculateCharge2(double charge2, double hours2) {
+		Scanner key = new Scanner(System.in);
+		
+	
+	
+		if (hours2 >= 0 && hours2 <= 3)
+		{
+			charge2 = 2;
+			
+			return charge2;
+		}
+		else if ( hours2 >=3.01 && hours2 <= 23.99)
+		{
+			double hoursPay = hours2 - 3;
+			charge2 = hoursPay * 0.5 + 2.0;
+			return charge2;
+		}
+		else if (hours2 == 24)
+			
+		{ charge2 = 10.0;
+		return charge2;
+		}
+		if (hours2 >= 24.01)
+		{ System.out.print("\tError");
+		return 0;
+		}
+		return charge2;
+}
+	public static double calculateCharge3(double charge3, double hours3) {
+		Scanner key = new Scanner(System.in);
+		
+	
+	
+		if (hours3 >= 0 && hours3 <= 3)
+		{
+			charge3 = 2;
+			
+			return charge3;
+		}
+		else if ( hours3 >=3.01 && hours3 <= 23.99)
+		{
+			double hoursPay = hours3 - 3;
+			charge3 = hoursPay * 0.5 + 2.0;
+			return charge3;
+		}
+		else if (hours3 == 24)
+			
+		{ charge3 = 10.0;
+		return charge3;
+		}
+		if (hours3 >= 24.01)
+		{ System.out.print("\tError");
+		return 0;
+		}
+		return charge3;	
+}
+}
