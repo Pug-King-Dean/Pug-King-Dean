@@ -1,0 +1,27 @@
+package refForAssignment;
+import geanral.My;
+import geanral.validate;
+
+public class repeating {
+
+	public static void main(String[] args) {;
+		int no1 = 0;
+		no1 = validate.validInt("\n\tEnter stoping number ", 0, 10);
+	   forLoop(no1);
+	   whileloop(no1);}
+	
+	public static int forLoop (int no1) {
+	for (int i = 1; i <= no1; i ++) {
+		My.print(String.format("\n\n\t%d", i));}
+	return no1;
+	}
+	
+	public static int whileloop (int no1) {
+		int brandon = 0;
+		do {
+			brandon+=1;
+			My.print(String.format("\n\n\t%d", brandon));
+		}while(brandon < no1);
+		return no1;
+	}
+}
