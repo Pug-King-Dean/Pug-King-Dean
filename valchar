@@ -1,0 +1,38 @@
+package refForAssignment;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+import geanral.*;
+public class valchar {
+static Scanner key = new Scanner(System.in);
+
+public static char validChar (String msg, char min, char max)
+{
+	char num = ' '; 
+	boolean ok = true; 
+	
+	do {
+		try
+		{
+			ok = true; 
+			My.print("\n\t " + msg);
+			num = key.next().charAt(0);
+			key.nextLine();
+			
+			if(num != min && num != max)
+			{
+				ok = false;
+				My.print (String.format("\n\tError: Range is %c - %c. Please re-enter.", min, max));
+				key.nextLine();
+				ok = false;
+			}
+		}
+		catch(InputMismatchException e) {
+			My.print("\n\tError: Illegal characther(s) in input - Please re-enter.");
+			key.nextLine();
+			ok = false;
+		}
+	}while(!ok);
+	return num;
+}
+}
