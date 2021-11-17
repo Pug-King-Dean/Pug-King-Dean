@@ -1,0 +1,71 @@
+package refForAssignment;
+
+import java.util.Scanner;
+
+public class foodOrderTwoTheFoodening {
+
+	public static void main(String[] args) {
+		Scanner key = new Scanner(System.in);
+		//food list 
+		double payment = 0, price = 0, food = 0, money = 0, change = 0, charge = 0.0, cost = 0.0, average = 0.0;
+		int item = 0;
+		
+		System.out.print("\n\t1 is Cheese burger is £ 4.99");
+		System.out.print("\n\t2 is Pepsi is £ 2.00");
+		System.out.print("\n\t3 is Chips are £ 2.50");
+		System.out.print("\n\t4 is Mexican beef is £ 5.00");
+		System.out.print("\n\t5 is Pizza is £6.50");
+		
+		for (int i = 0; i <= 2; i ++)
+		{
+		//input one
+		System.out.print("\n\tSelect food item:");
+		item = key.nextInt();
+		//outcomes items
+		if (item >= 6 || item <= -1)
+		{
+			System.out.print("\n\n\tFood item not found");
+		break;}
+		else if (item == 0) 
+		{ System.out.print("\n\n\tExiting menu");	
+		break;}
+		else if (item == 1)
+		{food= 4.99;
+			System.out.print("\n\n\tYou selected the cheese burger pay £4.99");
+			cost = cost + food;
+		}
+		else if (item == 2)
+		{food = 2.00;
+			System.out.print("\n\n\tYou selected the pepsi pay £2.00");
+			cost = cost + food;
+		}
+		else if (item == 3)
+		{food = 2.50;
+			System.out.print("\n\n\tYou selected the chips pay £2.50");
+			cost = cost + food;
+		}
+		else if (item == 4)
+		{food = 5.00;
+			System.out.print("\n\n\tYou selected the mexican beef pay £5.00");
+			cost = cost + food;
+		}
+		else if (item == 5)
+		{food = 6.50;
+			System.out.print("\n\n\tYou selected the pizza (the correct choice) pay £6.50 please");
+			cost = cost + food;
+		}
+		
+		
+		// change
+		if ( item >= 6 || item < 0)
+		{
+			System.out.print("\n\tError" );
+			break;
+		}
+		
+		System.out.printf("\n\t%2s %.2f", "£", cost);
+		}
+		
+	}
+
+}
