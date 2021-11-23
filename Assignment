@@ -1,0 +1,53 @@
+package assignment;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import geanral.My;
+import geanral.valNoLim;
+import geanral.valNoLim2;
+import geanral.valchar2;
+
+public class Assignment {
+
+	public static void main(String[] args) {
+		ArrayList<String> name = new ArrayList<String>();
+		int noOfSandwatch = 0;
+		int noOfHotfoods = 0;
+		char answer = ' ';
+		Scanner key = new Scanner(System.in);
+		do 
+	     {
+		My.print("\n\t+-------------+ ");
+		My.print("\n\t| LUNCH TO GO |");
+		My.print("\n\t|-------------| ");
+		My.print("\n\t|     MENU    |");
+		My.print("\n\t|-------------| ");
+		My.print("\n\t|a.)Sand watch|");
+		My.print("\n\t|-------------| ");
+		My.print("\n\t|b.)Hot foods |");
+		My.print("\n\t|-------------| ");
+		My.print("\n\t|c.)  Both    |");
+		My.print("\n\t|_____________| ");
+		
+	    System.out.print("\n\n\n\tPlease make your menu selection: ");
+	    answer = key.next().charAt(0);
+	        	
+	    if(answer != 'a'&& answer != 'A'&& answer != 'b'&& answer != 'B' && answer != 'c' && answer != 'C') 
+	    {
+	    System.out.print("\n\tInvalid selection");  
+	    System.out.print("\n\tPlease Re-Select A valid Option (A) (B) (C)");  
+	    }
+	    }while(answer != 'a'&& answer != 'A'&& answer != 'b'&& answer != 'B' && answer != 'c' && answer != 'C');
+		
+		if(answer == 'a'||answer=='c'||answer == 'A'||answer=='C') 
+		{
+		noOfSandwatch = valNoLim2.validInt("\n\tEnter number of sandwatches wanted: ");	
+		}
+		if(answer == 'b'||answer=='c'||answer == 'B'||answer=='C') 
+		{
+		noOfHotfoods = valNoLim2.validInt("\n\tEnter number of Hot foods wanted: ");	
+			}
+	}
+
+}
