@@ -1,0 +1,34 @@
+package geanral;
+
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+import geanral.*;
+public class valNoLim2 {
+static Scanner key = new Scanner(System.in);
+
+public static int validInt (String msg)
+
+{
+	int num = 0; 
+	boolean ok = true; 
+	
+	do {
+		try
+		{
+			ok = true; 
+			My.print("\n\t " + msg);
+			num = key.nextInt();
+			key.nextLine();
+			
+		
+		}
+		catch(InputMismatchException e) {
+			My.print("\n\tError: Illegal characther(s) in input - Please re-enter.");
+			key.nextLine();
+			ok = false;
+		}
+	}while(!ok);
+	return num;
+}
+}
